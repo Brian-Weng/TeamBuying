@@ -20,9 +20,5 @@ namespace TeamBuying
             this.rpTeamBuyings.DataBind();
         }
 
-        class testTeamBuying
-        {
-            public string Name { get; set; }
-        }
     }
 }
