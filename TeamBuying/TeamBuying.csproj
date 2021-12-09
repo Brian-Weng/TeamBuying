@@ -72,6 +72,7 @@
     <Content Include="Images\curry.png" />
     <Content Include="Images\Login.png" />
     <Content Include="Login.aspx" />
+    <Content Include="TeamBuyingDetail.aspx" />
     <Content Include="TeamBuyingList.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -87,6 +88,13 @@
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TeamBuyingDetail.aspx.cs">
+      <DependentUpon>TeamBuyingDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TeamBuyingDetail.aspx.designer.cs">
+      <DependentUpon>TeamBuyingDetail.aspx</DependentUpon>
+    </Compile>
     <Compile Include="TeamBuyingList.aspx.cs">
       <DependentUpon>TeamBuyingList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

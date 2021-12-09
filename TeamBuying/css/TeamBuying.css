@@ -11,3 +11,8 @@ input[placeholder*=Your] {
 .noResize{
     resize:none;
 }
+
+.btnX {
+    position: relative;
+    top: 20px;
+}

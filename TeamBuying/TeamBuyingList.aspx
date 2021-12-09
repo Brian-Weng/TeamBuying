@@ -38,7 +38,7 @@
                             <div class="card text-center">
                                 <div class="card-header">
                                     好想吃咖哩
-                                </div>
+                                </div>s
                                 <div class="row g-0">
                                     <div class="col-md-4">
                                         <img src="Images/curry.png" width="150" height="150" class="img-fluid rounded-start" alt="curry">
