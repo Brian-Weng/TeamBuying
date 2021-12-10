@@ -19,7 +19,7 @@ namespace TeamBuying.DB
                     var query =
                         (from item in context.Accounts
                          where item.UserAccount == account
-                         select item).Include(o => o.AccountInfo);
+                         select item).Include(o => o.AccountInfo); //Include 要下載EF6並加入命名空間System.Data.Entity 
 
                     var obj = query.FirstOrDefault();
                     return obj;
