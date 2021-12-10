@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeamBuying", "TeamBuying.cs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeamBuying.ORM", "..\TeamBuying.ORM\TeamBuying.ORM.csproj", "{ECC68744-6D6E-4695-BF14-B553516A028D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeamBuying.Auth", "..\TeamBuying.Auth\TeamBuying.Auth.csproj", "{688C7C37-28F0-4938-911C-E65FD39DCD8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeamBuying.DB", "..\TeamBuying.DB\TeamBuying.DB.csproj", "{250BDFCC-F422-45DE-999B-BDE8FE08AEB2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{ECC68744-6D6E-4695-BF14-B553516A028D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ECC68744-6D6E-4695-BF14-B553516A028D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ECC68744-6D6E-4695-BF14-B553516A028D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{688C7C37-28F0-4938-911C-E65FD39DCD8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{688C7C37-28F0-4938-911C-E65FD39DCD8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{688C7C37-28F0-4938-911C-E65FD39DCD8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{688C7C37-28F0-4938-911C-E65FD39DCD8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{250BDFCC-F422-45DE-999B-BDE8FE08AEB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{250BDFCC-F422-45DE-999B-BDE8FE08AEB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{250BDFCC-F422-45DE-999B-BDE8FE08AEB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{250BDFCC-F422-45DE-999B-BDE8FE08AEB2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

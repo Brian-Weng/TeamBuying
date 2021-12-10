@@ -18,13 +18,16 @@
                     <img src="images/Login.png" width="80" height="60" class="my-3"/>
                     <h2 class="mb-4">Login</h2>
                         <div class="form-group">
-                            <input type="text" class="form-control m-2" placeholder="Your Account"/>
+                            <asp:TextBox ID="txtAccount" runat="server" CssClass="form-control m-2" placeholder="Your Account"></asp:TextBox>
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control m-2" placeholder="Your Password"/>
+                            <asp:TextBox ID="txtPassword" TextMode="Password" runat="server" CssClass="form-control m-2" placeholder="Your Password"></asp:TextBox>
                         </div>
                         <div class="form-group">
-                            <button type="submit" class="btn btn-secondary m-2">Login</button>
+                            <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="btn btn-secondary m-2" OnClick="btnLogin_Click"/>
+                        </div>
+                        <div>
+                            <asp:Label ID="lbMsg" runat="server" Text="" CssClass="text-danger pb-2"></asp:Label>
                         </div>
                 </div>
             </div>
