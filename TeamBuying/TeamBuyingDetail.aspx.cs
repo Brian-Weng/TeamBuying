@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using TeamBuying.Auth;
 
 namespace TeamBuying
 {
@@ -11,6 +12,11 @@ namespace TeamBuying
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(!AuthManager.IsAuthenticated())
+            {
+                Response.Redirect("Login.aspx");
+            }
+
             List<int> list = new List<int>() { 1,2,3,4,5,6,7,8};
 
             this.rpOrderLists.DataSource = list;

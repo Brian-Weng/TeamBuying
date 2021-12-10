@@ -58,6 +58,18 @@ namespace TeamBuying.Auth
             FormsAuthentication.SignOut();
         }
 
+        public static bool IsAuthenticated()
+        {
+            var user = GetAccountInfo();
+            if(user == null)
+            {
+                return false;
+            }
+
+            return true;
+            
+        }
+
         private static void GetTicket_And_AddIntoCookies(Account account)
         {
             var ticket = new FormsAuthenticationTicket(
@@ -67,7 +79,7 @@ namespace TeamBuying.Auth
                 DateTime.Now.AddMinutes(60),    //有效時間
                 false,  // 是否將 Cookie 設定成 Session Cookie (會在瀏覽器關閉後移除)
                 //JsonConvert.SerializeObject(account.AccountInfo),   // 將使用者資訊轉成 JSON字串
-                account.AccountInfo.Name,
+                account.ID.ToString(),
                 FormsAuthentication.FormsCookiePath     // 儲存 Cookie路徑
                 );
 
@@ -79,6 +91,20 @@ namespace TeamBuying.Auth
 
             // 將 含有 Ticket的 cookie物件 寫入 Cookies
             HttpContext.Current.Response.Cookies.Add(cookie);
+        }
+        
+        public static string GetAccountInfo()
+        {
+            var user = HttpContext.Current.User;
+
+            if(user?.Identity?.IsAuthenticated == true)
+            {
+                var identity = user.Identity as FormsIdentity;
+
+                return identity.Ticket.UserData;
+            }
+
+            return null;
         }
     }
 }
