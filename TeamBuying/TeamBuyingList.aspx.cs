@@ -4,12 +4,38 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using TeamBuying.Auth;
 
 namespace TeamBuying
 {
     public partial class TeamBuyingList : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
+        {
+            this.ShowPageLayoutByLogined();
+
+            this.ShowList();
+        }
+        protected void lbLogout_Click(object sender, EventArgs e)
+        {
+            AuthManager.SignOut();
+            Response.Redirect("~/Login.aspx");
+        }
+
+        private void ShowPageLayoutByLogined()
+        {
+            string currentUser = AuthManager.GetAccountInfo();
+            if (!string.IsNullOrWhiteSpace(currentUser))
+            {
+                this.lblAccountName.Visible = true;
+                this.lblAccountName.Text = $"Welcome, {currentUser}";
+                this.lbLogout.Visible = true;
+                this.lbLogin.Visible = false;
+                this.lbCreateTeam.Visible = true;
+            }
+        }
+
+        private void ShowList()
         {
             List<int> list = new List<int>();
             list.Add(1);

@@ -13,6 +13,10 @@ namespace TeamBuying.Auth
 {
     public class AuthManager
     {
+        /// <summary> 登入功能 </summary>
+        /// <param name="account">帳號</param>
+        /// <param name="pwd">密碼</param>
+        /// <param name="errorMsg">錯誤訊息</param>
         public static void SignIn(string account, string pwd, out string errorMsg)
         {
             // 檢查傳進來的使用者輸入值
@@ -52,12 +56,15 @@ namespace TeamBuying.Auth
             }
         }
 
-        public void SignOut()
+        /// <summary> 登出功能 </summary>
+        public static void SignOut()
         {
             // 移除瀏覽器的表單驗證
             FormsAuthentication.SignOut();
         }
 
+        /// <summary> 驗證使用者是否已登入 </summary>
+        /// <returns></returns>
         public static bool IsAuthenticated()
         {
             var user = GetAccountInfo();
@@ -70,6 +77,8 @@ namespace TeamBuying.Auth
             
         }
 
+        /// <summary> 建立票證並加入到 Cookie </summary>
+        /// <param name="account"> DB帳號資訊 </param>
         private static void GetTicket_And_AddIntoCookies(Account account)
         {
             var ticket = new FormsAuthenticationTicket(
@@ -79,7 +88,7 @@ namespace TeamBuying.Auth
                 DateTime.Now.AddMinutes(60),    //有效時間
                 false,  // 是否將 Cookie 設定成 Session Cookie (會在瀏覽器關閉後移除)
                 //JsonConvert.SerializeObject(account.AccountInfo),   // 將使用者資訊轉成 JSON字串
-                account.ID.ToString(),
+                account.AccountInfo.Name.ToString(),
                 FormsAuthentication.FormsCookiePath     // 儲存 Cookie路徑
                 );
 
@@ -93,6 +102,8 @@ namespace TeamBuying.Auth
             HttpContext.Current.Response.Cookies.Add(cookie);
         }
         
+        /// <summary> 取得目前使用者資訊 </summary>
+        /// <returns></returns>
         public static string GetAccountInfo()
         {
             var user = HttpContext.Current.User;

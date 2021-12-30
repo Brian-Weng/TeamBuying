@@ -18,8 +18,9 @@
                 <div class="col-12">
                     <nav class="nav">
                         <asp:Label ID="lblAccountName" runat="server" CssClass="nav-link text-dark" Text="Welcome, Peter Parker " Visible="false"></asp:Label>
-                        <a class="nav-link" href="#">Login</a>
-                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#CreateTeamModal">揪團</a>
+                        <asp:LinkButton ID="lbLogout" runat="server" CssClass="nav-link" Visible="false" OnClick="lbLogout_Click">Logout</asp:LinkButton>
+                        <asp:LinkButton ID="lbLogin" runat="server" CssClass="nav-link" PostBackUrl="~/Login.aspx">Login</asp:LinkButton>
+                        <asp:LinkButton ID="lbCreateTeam" runat="server" CssClass="nav-link" Visible="false" data-bs-toggle="modal" data-bs-target="#CreateTeamModal">揪團</asp:LinkButton>
                     </nav>
                 </div>
 

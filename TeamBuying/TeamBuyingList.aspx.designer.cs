@@ -33,6 +33,33 @@ namespace TeamBuying
         protected global::System.Web.UI.WebControls.Label lblAccountName;
 
         /// <summary>
+        /// lbLogout 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbLogout;
+
+        /// <summary>
+        /// lbLogin 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbLogin;
+
+        /// <summary>
+        /// lbCreateTeam 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbCreateTeam;
+
+        /// <summary>
         /// rpTeamBuyings 控制項。
         /// </summary>
         /// <remarks>
