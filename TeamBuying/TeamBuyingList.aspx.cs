@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using TeamBuying.Auth;
+using TeamBuying.Controller;
 
 namespace TeamBuying
 {
@@ -13,7 +14,7 @@ namespace TeamBuying
         protected void Page_Load(object sender, EventArgs e)
         {
             this.ShowPageLayoutByLogined();
-
+            this.BindStoreName();
             this.ShowList();
         }
         protected void lbLogout_Click(object sender, EventArgs e)
@@ -33,6 +34,16 @@ namespace TeamBuying
                 this.lbLogin.Visible = false;
                 this.lbCreateTeam.Visible = true;
             }
+        }
+
+        private void BindStoreName()
+        {
+            var controller = new StoreController();
+            var storeList = controller.GetStoreDropDownList();
+            this.ddlStoreName.DataValueField = "ID";
+            this.ddlStoreName.DataTextField = "Name";
+            this.ddlStoreName.DataSource = storeList;
+            this.ddlStoreName.DataBind();
         }
 
         private void ShowList()

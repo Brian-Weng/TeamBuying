@@ -128,6 +128,10 @@
       <Project>{688C7C37-28F0-4938-911C-E65FD39DCD8B}</Project>
       <Name>TeamBuying.Auth</Name>
     </ProjectReference>
+    <ProjectReference Include="..\TeamBuying.Controller\TeamBuying.Controller.csproj">
+      <Project>{AABE874B-1840-4FCE-9A7C-F58396B2D953}</Project>
+      <Name>TeamBuying.Controller</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
