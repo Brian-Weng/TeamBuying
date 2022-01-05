@@ -79,8 +79,6 @@
                         <div class="mb-3">
                             <label for="<%= this.ddlStoreName.ClientID %>" class="col-form-label">店名：</label>
                             <asp:DropDownList ID="ddlStoreName" runat="server">
-                                <asp:ListItem Value="0" Text="咖哩屋"></asp:ListItem>
-                                <asp:ListItem Value="1" Text="天然面膜"></asp:ListItem>
                             </asp:DropDownList>
                         </div>
                         <div class="mb-3">
