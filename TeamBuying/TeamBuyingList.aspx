@@ -87,7 +87,11 @@
                         </div>
                         <div class="mb-3">
                             <label for="" class="col-form-label">結算時間：</label>
-                            <asp:Label ID="Label1" runat="server"><%= DateTime.Now.Year%>年</asp:Label>
+                            <%--<asp:Label ID="Label1" runat="server"><%= DateTime.Now.Year%>年</asp:Label>--%>
+                            <asp:DropDownList ID="ddlYear" runat="server" CssClass="me-1">
+                                <asp:ListItem Value="1" Text="1月"></asp:ListItem>
+                                <asp:ListItem Value="2" Text="2月"></asp:ListItem>
+                            </asp:DropDownList>年
                             <asp:DropDownList ID="ddlMonth" runat="server" CssClass="me-1">
                                 <asp:ListItem Value="1" Text="1月"></asp:ListItem>
                                 <asp:ListItem Value="2" Text="2月"></asp:ListItem>
@@ -95,10 +99,6 @@
                             <asp:DropDownList ID="ddlDay" runat="server"  CssClass="me-1">
                                 <asp:ListItem Value="1" Text="1日"></asp:ListItem>
                                 <asp:ListItem Value="2" Text="2日"></asp:ListItem>
-                            </asp:DropDownList>
-                            <asp:DropDownList ID="ddlTime" runat="server">
-                                <asp:ListItem Value="1" Text="8:00"></asp:ListItem>
-                                <asp:ListItem Value="2" Text="9:00"></asp:ListItem>
                             </asp:DropDownList>
                         </div>
                     </div>

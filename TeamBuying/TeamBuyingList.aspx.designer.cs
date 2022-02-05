@@ -96,13 +96,13 @@ namespace TeamBuying
         protected global::System.Web.UI.WebControls.TextBox txtBody;
 
         /// <summary>
-        /// Label1 控制項。
+        /// ddlYear 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.DropDownList ddlYear;
 
         /// <summary>
         /// ddlMonth 控制項。
@@ -121,15 +121,6 @@ namespace TeamBuying
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlDay;
-
-        /// <summary>
-        /// ddlTime 控制項。
-        /// </summary>
-        /// <remarks>
-        /// 自動產生的欄位。
-        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlTime;
 
         /// <summary>
         /// btnSave 控制項。
