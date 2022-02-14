@@ -19,7 +19,7 @@
                     <nav class="nav">
                         <asp:Label ID="lblAccountName" runat="server" CssClass="nav-link text-dark" Text="Welcome, Peter Parker " Visible="false"></asp:Label>
                         <asp:LinkButton ID="lbLogout" runat="server" CssClass="nav-link" Visible="false" OnClick="lbLogout_Click">Logout</asp:LinkButton>
-                        <asp:LinkButton ID="lbLogin" runat="server" CssClass="nav-link" PostBackUrl="~/Login.aspx">Login</asp:LinkButton>
+                        <asp:LinkButton ID="lbLogin" runat="server" CssClass="nav-link" PostBackUrl="Login.aspx">Login</asp:LinkButton>
                         <asp:LinkButton ID="lbCreateTeam" runat="server" CssClass="nav-link" Visible="false" data-bs-toggle="modal" data-bs-target="#CreateTeamModal">揪團</asp:LinkButton>
                     </nav>
                 </div>
@@ -27,7 +27,7 @@
                 <%--搜尋列--%>
                 <div class="col-12">
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Search"/>
+                        <input type="text" class="form-control" placeholder="Search" />
                         <button class="btn btn-outline-secondary" type="button" id="btnSearch">Search</button>
                     </div>
                 </div>
@@ -38,23 +38,24 @@
                         <ItemTemplate>
                             <div class="card text-center">
                                 <div class="card-header">
-                                    好想吃咖哩
-                                </div>s
+                                    <%# Eval("Title") %>
+                                </div>
+                                
                                 <div class="row g-0">
                                     <div class="col-md-4">
-                                        <img src="Images/curry.png" width="150" height="150" class="img-fluid rounded-start" alt="curry">
+                                        <img src="/Images/curry.png" width="150" height="150" class="img-fluid rounded-start" alt="curry">
                                     </div>
                                     <div class="col-md-8">
                                         <div class="card-body">
-                                            <h5 class="card-title">團長：Peter</h5>
-                                            <p class="card-text">店名:咖哩屋</p>
-                                            <p class="card-text">好吃的咖哩調理包</p>
+                                            <h5 class="card-title">團長：<%# Eval("TeamLeaderName") %></h5>
+                                            <p class="card-text">店名:<%# Eval("StoreName") %></p>
+                                            <p class="card-text"><%# Eval("Body") %></p>
                                             <a href="#" class="btn btn-primary">我要參團</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="card-footer text-muted">
-                                    結算時間: 2021/12/10 17:30
+                                    結算時間: <%# Eval("EndDate") %>
                                 </div>
                             </div>
                         </ItemTemplate>
@@ -87,24 +88,12 @@
                         </div>
                         <div class="mb-3">
                             <label for="" class="col-form-label">結算時間：</label>
-                            <%--<asp:Label ID="Label1" runat="server"><%= DateTime.Now.Year%>年</asp:Label>--%>
-                            <asp:DropDownList ID="ddlYear" runat="server" CssClass="me-1">
-                                <asp:ListItem Value="1" Text="1月"></asp:ListItem>
-                                <asp:ListItem Value="2" Text="2月"></asp:ListItem>
-                            </asp:DropDownList>年
-                            <asp:DropDownList ID="ddlMonth" runat="server" CssClass="me-1">
-                                <asp:ListItem Value="1" Text="1月"></asp:ListItem>
-                                <asp:ListItem Value="2" Text="2月"></asp:ListItem>
-                            </asp:DropDownList>
-                            <asp:DropDownList ID="ddlDay" runat="server"  CssClass="me-1">
-                                <asp:ListItem Value="1" Text="1日"></asp:ListItem>
-                                <asp:ListItem Value="2" Text="2日"></asp:ListItem>
-                            </asp:DropDownList>
+                            <input id="endDatePicker" runat="server" type="date" />
                         </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <asp:Button ID="btnSave" runat="server" Text="建立" CssClass="btn btn-primary"/>
+                        <asp:Button ID="btnSave" runat="server" Text="建立" CssClass="btn btn-primary" />
                     </div>
                 </div>
             </div>

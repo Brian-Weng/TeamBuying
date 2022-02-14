@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TeamBuying.ORM.DBModels;
+using System.Data.Entity;
 
 namespace TeamBuying.DB
 {
@@ -15,7 +16,11 @@ namespace TeamBuying.DB
             {
                 using (ContextModel context = new ContextModel())
                 {
-                    var obj = context.TeamBuyings.ToList();
+                    var query =
+                         context.TeamBuyings
+                         .Include(o => o.Account.AccountInfo)
+                         .Include(o => o.Store);
+                    var obj = query.ToList();
                     return obj;
                 }
             }

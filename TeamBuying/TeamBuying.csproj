@@ -79,6 +79,9 @@
     <Content Include="Global.asax" />
     <Content Include="Images\curry.png" />
     <Content Include="Images\Login.png" />
+    <Content Include="js\bootstrap.bundle.js" />
+    <Content Include="js\bootstrap.js" />
+    <Content Include="js\bootstrap.min.js" />
     <Content Include="Login.aspx" />
     <Content Include="TeamBuyingDetail.aspx" />
     <Content Include="TeamBuyingList.aspx" />
@@ -131,6 +134,14 @@
     <ProjectReference Include="..\TeamBuying.Controller\TeamBuying.Controller.csproj">
       <Project>{AABE874B-1840-4FCE-9A7C-F58396B2D953}</Project>
       <Name>TeamBuying.Controller</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TeamBuying.DB\TeamBuying.DB.csproj">
+      <Project>{250BDFCC-F422-45DE-999B-BDE8FE08AEB2}</Project>
+      <Name>TeamBuying.DB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TeamBuying.ORM\TeamBuying.ORM.csproj">
+      <Project>{ECC68744-6D6E-4695-BF14-B553516A028D}</Project>
+      <Name>TeamBuying.ORM</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
