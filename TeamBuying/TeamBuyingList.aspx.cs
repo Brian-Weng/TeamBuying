@@ -7,11 +7,14 @@ using System.Web.UI.WebControls;
 using TeamBuying.Auth;
 using TeamBuying.Controller;
 using TeamBuying.DB;
+using TeamBuying.DB.DBModelManager;
+using TeamBuying.DB.ViewModel;
 
 namespace TeamBuying
 {
     public partial class TeamBuyingList : System.Web.UI.Page
     {
+        TeamBuyingObject dbObject = new TeamBuyingObject();
         protected void Page_Load(object sender, EventArgs e)
         {
             this.ShowPageLayoutByLogined();
@@ -42,10 +45,9 @@ namespace TeamBuying
 
         private void ShowTeamBuyingList()
         {
-            TeamBuyingController teamBuyingController = new TeamBuyingController();
-            var teamBuyingList = teamBuyingController.GetTeamBuyingViewList();
+            IEnumerable<TeamBuyingView> teamBuyingViews = ((TeamBuyingManager)(dbObject.TeamBuyings)).CovertToView().ToList();
 
-            this.rpTeamBuyings.DataSource = teamBuyingList;
+            this.rpTeamBuyings.DataSource = teamBuyingViews;
             this.rpTeamBuyings.DataBind();
         }
 
@@ -54,11 +56,10 @@ namespace TeamBuying
         #region Bind
         private void BindStoreName()
         {
-            var controller = new StoreController();
-            var storeList = controller.GetStoreDropDownList();
+            IEnumerable<StoreView> storeViews = ((StoreManager)(dbObject.Stores)).ConvertToView().ToList();
             this.ddlStoreName.DataValueField = "ID";
             this.ddlStoreName.DataTextField = "Name";
-            this.ddlStoreName.DataSource = storeList;
+            this.ddlStoreName.DataSource = storeViews;
             this.ddlStoreName.DataBind();
         }
         #endregion

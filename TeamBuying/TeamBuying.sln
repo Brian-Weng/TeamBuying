@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeamBuying.Auth", "..\TeamB
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeamBuying.DB", "..\TeamBuying.DB\TeamBuying.DB.csproj", "{250BDFCC-F422-45DE-999B-BDE8FE08AEB2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeamBuying.Controller", "..\TeamBuying.Controller\TeamBuying.Controller.csproj", "{AABE874B-1840-4FCE-9A7C-F58396B2D953}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,10 +33,6 @@ Global
 		{250BDFCC-F422-45DE-999B-BDE8FE08AEB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{250BDFCC-F422-45DE-999B-BDE8FE08AEB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{250BDFCC-F422-45DE-999B-BDE8FE08AEB2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AABE874B-1840-4FCE-9A7C-F58396B2D953}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AABE874B-1840-4FCE-9A7C-F58396B2D953}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AABE874B-1840-4FCE-9A7C-F58396B2D953}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AABE874B-1840-4FCE-9A7C-F58396B2D953}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

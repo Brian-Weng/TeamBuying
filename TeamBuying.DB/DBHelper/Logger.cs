@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TeamBuying.DB
+namespace TeamBuying.DB.DBHelper
 {
     public class Logger
     {

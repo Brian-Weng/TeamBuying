@@ -55,7 +55,7 @@
                                     </div>
                                 </div>
                                 <div class="card-footer text-muted">
-                                    結算時間: <%# Eval("EndDate") %>
+                                    結算時間: <%# Eval("EndDate","{0:yyyy-MM-dd}") %>
                                 </div>
                             </div>
                         </ItemTemplate>
