@@ -11,14 +11,8 @@ using TeamBuying.ORM.DBModels;
 
 namespace TeamBuying.DB.DBModelManager
 {
-    public class TeamBuyingObject
+    public class ManagerHandler
     {
-        public TeamBuyingObject()
-        {
-            if (HttpContext.Current.Items["DbContext"] == null)
-                HttpContext.Current.Items["DbContext"] = new ContextModel();
-        }
-
         private IDBManager<TeamBuying.ORM.DBModels.TeamBuying> _TeamBuyingManager = null;
 
         private IDBManager<Store> _StoreManager = null;

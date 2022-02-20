@@ -5,7 +5,6 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using TeamBuying.Auth;
-using TeamBuying.Controller;
 
 namespace TeamBuying
 {

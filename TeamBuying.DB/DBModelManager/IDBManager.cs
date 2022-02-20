@@ -11,9 +11,6 @@ namespace TeamBuying.DB.DBModelManager
     public interface IDBManager<T> 
                      where T:class, new()
     {
-        //DbContext dbContext { get;}
-
-        ContextModel Context { get; }
         IEnumerable<T> Get();
         void Create(T item);
         void Update(T item);

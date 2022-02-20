@@ -13,23 +13,13 @@ namespace TeamBuying.DB.DBModelManager
 {
     public class TeamBuyingManager : IDBManager<ORM.DBModels.TeamBuying>
     {
-
-        public ContextModel Context
-        {
-            get
-            {
-                var context = HttpContext.Current.Items["DbContext"] as ContextModel;
-                return context;
-            }
-        }
-
         /// <summary> 查詢DB </summary>
         /// <returns></returns>
         public IEnumerable<ORM.DBModels.TeamBuying> Get()
         {
             try
             {
-                var query = Context.TeamBuyings;
+                var query = DbContextHelper.DbContext().TeamBuyings;
                 return query;
             }
             catch (Exception ex)
@@ -39,31 +29,6 @@ namespace TeamBuying.DB.DBModelManager
             }
         }
 
-        /// <summary> 將EDM轉成頁面顯示的ViewModel </summary>
-        /// <returns></returns>
-        public IEnumerable<TeamBuyingView> CovertToView()
-        {
-            try
-            {
-                var query =
-                    from item in Context.TeamBuyings
-                    select new TeamBuyingView()
-                    {
-                        ID = item.ID,
-                        Title = item.Title,
-                        TeamLeaderName = item.Account.AccountInfo.Name,
-                        StoreName = item.Store.Name,
-                        Body = item.Body,
-                        EndDate = item.EndDate
-                    };
-                return query;
-            }
-            catch (Exception ex)
-            {
-                Logger.WriteLog(ex);
-                return null;
-            }
-        }
 
         public void Create(ORM.DBModels.TeamBuying item)
         {
@@ -71,7 +36,7 @@ namespace TeamBuying.DB.DBModelManager
             {
                 item.CreateDate = DateTime.Now;
                 item.Status = 0;
-                Context.SaveChanges();
+                DbContextHelper.DbContext().SaveChanges();
             }
             catch (Exception ex)
             {
@@ -88,7 +53,7 @@ namespace TeamBuying.DB.DBModelManager
         {
             throw new NotImplementedException();
         }
-
+        //資料檢查 處理 儲存 Manager 商業邏輯曾
 
     }
 }

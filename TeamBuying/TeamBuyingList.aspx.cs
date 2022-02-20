@@ -5,8 +5,6 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using TeamBuying.Auth;
-using TeamBuying.Controller;
-using TeamBuying.DB;
 using TeamBuying.DB.DBModelManager;
 using TeamBuying.DB.ViewModel;
 
@@ -14,7 +12,7 @@ namespace TeamBuying
 {
     public partial class TeamBuyingList : System.Web.UI.Page
     {
-        TeamBuyingObject dbObject = new TeamBuyingObject();
+        ManagerHandler manager = new ManagerHandler();
         protected void Page_Load(object sender, EventArgs e)
         {
             this.ShowPageLayoutByLogined();
@@ -43,23 +41,40 @@ namespace TeamBuying
             }
         }
 
+        /// <summary> 將TeamBuing資料轉成ViewModel並繫結 </summary>
         private void ShowTeamBuyingList()
         {
-            IEnumerable<TeamBuyingView> teamBuyingViews = ((TeamBuyingManager)(dbObject.TeamBuyings)).CovertToView().ToList();
+            var viewList = manager.TeamBuyings.Get()
+                                              .Select(t => new TeamBuyingView
+                                              {
+                                                  ID = t.ID,
+                                                  Title = t.Title,
+                                                  TeamLeaderName = t.Account.AccountInfo.Name,
+                                                  StoreName = t.Store.Name,
+                                                  Body = t.Body,
+                                                  EndDate = t.EndDate
+                                              }).ToList();
 
-            this.rpTeamBuyings.DataSource = teamBuyingViews;
+            this.rpTeamBuyings.DataSource = viewList;
             this.rpTeamBuyings.DataBind();
         }
 
         #endregion
 
         #region Bind
+
+        /// <summary> 將Store資料轉成ViewModel並繫結</summary>
         private void BindStoreName()
         {
-            IEnumerable<StoreView> storeViews = ((StoreManager)(dbObject.Stores)).ConvertToView().ToList();
+            var storeViewList = manager.Stores.Get()
+                                              .Select(s => new StoreView
+                                              {
+                                                  ID = s.ID,
+                                                  Name = s.Name
+                                              });
             this.ddlStoreName.DataValueField = "ID";
             this.ddlStoreName.DataTextField = "Name";
-            this.ddlStoreName.DataSource = storeViews;
+            this.ddlStoreName.DataSource = storeViewList;
             this.ddlStoreName.DataBind();
         }
         #endregion
